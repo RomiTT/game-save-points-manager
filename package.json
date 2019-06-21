@@ -37,6 +37,8 @@
     ]
   },
   "devDependencies": {
+    "@rescripts/cli": "^0.0.10",
+    "@rescripts/rescript-env": "^0.0.10",
     "concurrently": "^4.1.0",
     "electron": "^5.0.4",
     "electron-builder": "^20.44.4",
