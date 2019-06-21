@@ -24,7 +24,9 @@
     "electron-dev": "concurrently --kill-others \"yarn start\" \"wait-on http://localhost:3000 && electron --remote-debugging-port=9222 .\"",
     "postinstall": "electron-builder install-app-deps",
     "preelectron-pack": "yarn build",
-    "electron-pack": "build -w"
+    "electron-pack": "build -w",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
   },
   "homepage": "./",
   "author": {
@@ -67,8 +69,14 @@
     ]
   },
   "devDependencies": {
+    "@babel/core": "^7.4.5",
     "@rescripts/cli": "^0.0.10",
     "@rescripts/rescript-env": "^0.0.10",
+    "@storybook/addon-actions": "^5.1.9",
+    "@storybook/addon-links": "^5.1.9",
+    "@storybook/addons": "^5.1.9",
+    "@storybook/react": "^5.1.9",
+    "babel-loader": "^8.0.6",
     "concurrently": "^4.1.0",
     "electron": "^5.0.4",
     "electron-builder": "^20.44.4",
