@@ -15,9 +15,9 @@
   },
   "main": "public/electron.js",
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
+    "start": "rescripts start",
+    "build": "rescripts build",
+    "test": "rescripts test",
     "eject": "react-scripts eject",
     "electron-dev": "concurrently --kill-others \"yarn start\" \"wait-on http://localhost:3000 && electron --remote-debugging-port=9222 .\""
   },
