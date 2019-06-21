@@ -19,7 +19,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "electron-dev": "concurrently \"yarn start\" \"wait-on http://localhost:3000 && electron .\""
+    "electron-dev": "concurrently --kill-others \"yarn start\" \"wait-on http://localhost:3000 && electron --remote-debugging-port=9222 .\""
   },
   "eslintConfig": {
     "extends": "react-app"
