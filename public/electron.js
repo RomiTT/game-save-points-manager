@@ -1,8 +1,11 @@
-import { app, BrowserWindow } from 'electron';
-import isDev from 'electron-is-dev';
-import path from 'path';
+const electron = require('electron');
+const app = electron.app;
+const BrowserWindow = electron.BrowserWindow;
 
-let mainWindow: Electron.BrowserWindow;
+const path = require('path');
+const isDev = require('electron-is-dev');
+
+let mainWindow;
 
 function createWindow() {
   mainWindow = new BrowserWindow({
