@@ -17,6 +17,8 @@ function createWindow() {
     }
   });
 
+  mainWindow.setTitle('');
+
   mainWindow.loadURL(
     isDev
       ? 'http://localhost:3000'

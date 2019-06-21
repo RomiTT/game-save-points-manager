@@ -11,7 +11,7 @@
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-scripts": "3.0.1",
-    "typescript": "3.5.2"
+    "typescript": "^3.5.2"
   },
   "main": "public/electron.js",
   "scripts": {
@@ -19,7 +19,35 @@
     "build": "rescripts build",
     "test": "rescripts test",
     "eject": "react-scripts eject",
-    "electron-dev": "concurrently --kill-others \"yarn start\" \"wait-on http://localhost:3000 && electron --remote-debugging-port=9222 .\""
+    "electron-dev": "concurrently --kill-others \"yarn start\" \"wait-on http://localhost:3000 && electron --remote-debugging-port=9222 .\"",
+    "postinstall": "electron-builder install-app-deps",
+    "preelectron-pack": "yarn build",
+    "electron-pack": "build -w"
+  },
+  "homepage": "./",
+  "author": {
+    "name": "Bowgum Kim",
+    "email": "bowgum.kim@gmail.com",
+    "url": ""
+  },
+  "build": {
+    "appId": "romitt.game-save-points-manager",
+    "productName": "gspm",
+    "copyright": "Copyright © 2019 ${author}",
+    "win": {
+      "target": [
+        "zip",
+        "nsis"
+      ],
+      "icon": "./electron-resources/appIcon.ico"
+    },
+    "files": [
+      "build/**/*",
+      "node_modules/**/*"
+    ],
+    "directories": {
+      "buildResources": "assets"
+    }
   },
   "eslintConfig": {
     "extends": "react-app"
