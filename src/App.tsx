@@ -1,7 +1,7 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
-import ftb from './FramelessTitlebar';
+import { TitleBar, TitleBarTheme } from './FramelessTitlebar';
 
 import {
   Navbar,
@@ -19,10 +19,10 @@ const App: React.FC = () => {
   return (
     <div className='hero is-fullheight bp3-dark'>
       <div className='hero-head'>
-        <ftb.TitleBar
+        <TitleBar
           app='Game Save Points Manager'
           icon={`./appIcon.ico`}
-          theme={ftb.Theme}
+          theme={TitleBarTheme}
         />
         <Navbar>
           <NavbarGroup align={Alignment.LEFT}>
