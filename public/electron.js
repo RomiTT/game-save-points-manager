@@ -5,12 +5,16 @@ const BrowserWindow = electron.BrowserWindow;
 const path = require('path');
 const isDev = require('electron-is-dev');
 
-let mainWindow;
+let mainWindow = null;
 
 function createWindow() {
   mainWindow = new BrowserWindow({
     width: 1000,
     height: 800,
+    minWidth: 400,
+    minHeight: 300,
+    frame: false,
+    titleBarStyle: 'hidden',
     webPreferences: {
       devTools: isDev,
       nodeIntegration: true
@@ -26,17 +30,12 @@ function createWindow() {
   );
 
   if (isDev) {
-    mainWindow.webContents.openDevTools();
-
     const os = require('os');
     const { readdirSync } = require('fs');
 
     const REACT_DEV_TOOL_ID = 'fmkadmapgofadopljbjfkapdkoienihi';
     const REDUX_DEV_TOOL_ID = 'lmhkpmbekcpmknklioeibfkpmmfibljd';
     const MOBX_DEV_TOOL_ID = 'pfgnfdagidkfgccljigdamigbcnndkod';
-
-    // Open the DevTools.
-    mainWindow.webContents.openDevTools();
 
     const extensionPath = path.join(
       os.homedir(),
@@ -66,6 +65,10 @@ function createWindow() {
         `${extensionPath}/${MOBX_DEV_TOOL_ID}/${version}`
       );
     }
+
+    // Open the DevTools.
+    //mainWindow.webContents.openDevTools({ mode: 'bottom' });
+    mainWindow.webContents.openDevTools();
   }
 
   mainWindow.on('closed', () => {
