@@ -26,7 +26,7 @@ const App: React.FC = () => {
         />
         <Navbar>
           <NavbarGroup align={Alignment.LEFT}>
-            <NavbarHeading>Blueprint</NavbarHeading>
+            <NavbarHeading>Games</NavbarHeading>
           </NavbarGroup>
           <NavbarGroup align={Alignment.RIGHT}>
             <Button className={Classes.MINIMAL} icon='home' text='Home' />
