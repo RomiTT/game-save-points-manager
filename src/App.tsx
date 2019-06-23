@@ -18,7 +18,7 @@ import {
 const App: React.FC = () => {
   return (
     <div className='hero is-fullheight bp3-dark'>
-      <div className='hero-head'>
+      <div className='hero-head' style={{ backgroundColor: Colors.DARK_GRAY5 }}>
         <TitleBar
           app='Game Save Points Manager'
           icon={`./appIcon.ico`}
