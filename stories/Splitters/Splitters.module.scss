@@ -1,0 +1,33 @@
+.horizontalSplitter {
+  display: flex;
+  flex-direction: column;
+  background-color: yellow;
+  height: 100%;
+
+  .resizeBar {
+    background-color: gray;
+    height: 6px;
+    overflow: hidden;
+    cursor: ns-resize;
+    &:hover {
+      background-color: silver;
+    }
+  }
+}
+
+.verticalSplitter {
+  display: flex;
+  background-color: green;
+  height: 100%;
+
+  .resizeBar {
+    background-color: gray;
+    width: 6px;
+    height: 100%;
+    overflow: hidden;
+    cursor: ew-resize;
+    &:hover {
+      background-color: silver;
+    }
+  }
+}
